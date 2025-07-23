@@ -17,6 +17,8 @@
     <PackageReference Include="MongoDB.Driver" Version="3.4.1" />
     
     <PackageReference Include="Scalar.AspNetCore" Version="2.6.4" />
+    
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
 
   </ItemGroup>
 

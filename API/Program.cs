@@ -10,6 +10,8 @@ using API.Services;
 using API.Hubs;
 using API.Common;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.SwaggerUI; // For Swashbuckle
+using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -110,5 +112,8 @@ app.MapHub<ChatHub>("/hubs/chat");
 app.MapAccountEndpoint();
 app.MapGet("",()=>"Hello World");
 
+
+
 app.Run();
+
 
