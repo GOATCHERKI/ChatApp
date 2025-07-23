@@ -107,6 +107,7 @@ app.UseAuthorization();
 app.UseStaticFiles();
 app.MapHub<ChatHub>("/hubs/chat");
 app.MapAccountEndpoint();
+app.MapGet("",()=>"Hello World");
 
 app.Run();
 
