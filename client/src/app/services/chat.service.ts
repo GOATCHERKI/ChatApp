@@ -3,6 +3,7 @@ import { User } from '../Models/User';
 import { AuthService } from './auth.service';
 import { HubConnection, HubConnectionBuilder, HubConnectionState } from '@microsoft/signalr';
 import { Message } from '../Models/message';
+import { envirenmont } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { Message } from '../Models/message';
 export class ChatService {
 
   private authService = inject(AuthService);
-  private hubUrl = 'http://localhost:5000/hubs/chat';
+  private hubUrl = `${envirenmont.baseUrl}/hubs/chat`;
   onlineUsers = signal<User[]>([]);
   currentOpenedChat = signal<User | null>(null);
   chatMessages = signal<Message[]>([]);

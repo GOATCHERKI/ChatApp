@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { ApiResponse } from '../Models/api-response';
 import { User } from '../Models/User';
+import { envirenmont } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl = "http://localhost:5000/api/account";
+  private baseUrl = `${envirenmont.baseUrl}/api/account`;
   private token ='token';
 
   constructor(private httpClient: HttpClient) {}
