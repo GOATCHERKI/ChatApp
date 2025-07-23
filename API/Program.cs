@@ -17,13 +17,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
-    {
-        builder.WithOrigins("http://localhost:4200", "https://localhost:4200")
-               .AllowAnyHeader()
-               .AllowAnyMethod()
-               .AllowCredentials();
-    });
+    options.AddPolicy("RailwayPolicy", builder => 
+        builder.WithOrigins(
+                "https://chatapp-production-12d3.up.railway.app",
+                "http://localhost:4200"
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+            .SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
 });
 
 var JwtSetting= builder.Configuration.GetSection("JWTSettings");
@@ -88,10 +90,7 @@ var app = builder.Build();
 //}
 app.MapScalarApiReference();
 
-app.UseCors(x=>x.AllowAnyHeader()
-    .AllowAnyMethod()
-    .AllowCredentials()
-    .WithOrigins("http://localhost:4200", "https://localhost:4200"));
+app.UseCors("RailwayPolicy");
 
 using (var scope = app.Services.CreateScope())
 {
