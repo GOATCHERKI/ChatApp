@@ -1,0 +1,5 @@
+bin/
+obj/
+.vscode
+chatapp.db
+API.http

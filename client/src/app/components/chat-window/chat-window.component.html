@@ -1,0 +1,112 @@
+@if(chatService.currentOpenedGroup()) {
+  <div class="relative w-full min-h-screen flex flex-col bg-[#f4f7fa]">
+    <!-- Header -->
+    <div class="chat-header flex items-center justify-between p-4 border-b bg-white shadow-sm">
+      <div class="flex items-center gap-3">
+        <mat-icon class="text-blue-600" style="font-size: 2rem;">groups</mat-icon>
+        <div>
+          <div class="font-semibold text-lg text-gray-800">
+            {{ chatService.currentOpenedGroup().name }}
+          </div>
+          <div class="text-xs text-gray-400 font-medium">
+            Group Chat
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button mat-icon-button (click)="closeChatWindow()">
+          <mat-icon class="text-red-500">close</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="flex-1 overflow-y-auto p-4">
+      @for (msg of chatService.chatMessages(); track msg.id) {
+        @if(msg.senderId === authService.currentLoggedInUser?.id) {
+          <!-- My message -->
+          <div class="flex flex-row items-center justify-end mb-3">
+            <div class="chat-message bg-blue-600 p-4 rounded-lg mx-2 shadow-sm text-white max-w-xs break-words">
+              <span class="text-sm block">{{ msg.content }}</span>
+              <span class="text-gray-200 text-right text-[10px] block mt-1 text-xs">{{ msg.timestamp | date:'short' }}</span>
+            </div>
+          </div>
+        } @else {
+          <!-- Other's message -->
+          <div class="flex flex-row items-center justify-normal mb-3">
+            <div class="chat-message bg-white p-4 rounded-lg ml-2 shadow-sm max-w-xs break-words">
+              <span class="font-bold text-xs text-blue-600 block mb-1">
+                {{ getUserName(msg.senderId || undefined) }}
+              </span>
+              <span class="text-gray-800 text-sm block">{{ msg.content }}</span>
+              <span class="text-gray-400 text-right text-[10px] block mt-1">{{ msg.timestamp | date:'short' }}</span>
+            </div>
+          </div>
+        }
+      }
+    </div>
+
+    <!-- Input Area -->
+    <div class="border-t bg-white p-4 flex items-center gap-2">
+      <input
+        type="text"
+        [(ngModel)]="message"
+        class="flex-1 text-gray-900 bg-gray-100 focus:outline-none border border-gray-200 rounded-full px-4 py-2"
+        placeholder="Type a message..."
+        (keydown.enter)="sendMessage()"
+      />
+      <mat-icon (click)="sendMessage()" class="ml-5 cursor-pointer hover:text-blue-600">send</mat-icon>
+    </div>
+  </div>
+} @else if(chatService.currentOpenedChat()) {
+  <!-- User-to-user chat UI -->
+  <div class="relative w-full min-h-screen flex flex-col bg-[#f4f7fa]">
+    <!-- Header -->
+    <div class="chat-header flex items-center justify-between p-4 border-b bg-white shadow-sm">
+      <div class="flex items-center gap-3">
+        <img
+          class="h-12 w-12 rounded-full border-2 border-gray-200 object-cover"
+          [src]="chatService.currentOpenedChat()?.profilePictureUrl?.trim() || chatService.currentOpenedChat()?.profilePic?.trim() || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+          alt="User profile picture"
+        />
+        <div>
+          <div class="font-semibold text-lg text-gray-800">
+            {{ chatService.currentOpenedChat()?.fullName | titlecase }}
+          </div>
+          <div class="text-xs text-gray-400 font-medium">
+            {{ chatService.status(chatService.currentOpenedChat()?.userName!) }}
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button mat-icon-button>
+          <mat-icon class="text-blue-500">call</mat-icon>
+        </button>
+        <button mat-icon-button (click)="closeChatWindow()">
+          <mat-icon class="text-red-500">close</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="flex-1">
+      <app-chat-box/>
+    </div>
+
+    <!-- Input Area -->
+    <div class="border-t bg-white p-4 flex items-center gap-2">
+      <input
+        type="text"
+        [(ngModel)]="message"
+        class="flex-1 text-gray-900 bg-gray-100 focus:outline-none border border-gray-200 rounded-full px-4 py-2"
+        placeholder="Type a message..."
+      />
+      
+        <mat-icon (click)="sendMessage()" class="ml-5 cursor-pointer hover:text-blue-600" >send</mat-icon>
+
+    </div>
+  </div>
+}@else {
+  <div class="flex flex-col items-center justify-center p-4 min-h-screen bg-[#f4f7fa]">
+    <img src="chatopen.svg"/>
+  </div>
+}
