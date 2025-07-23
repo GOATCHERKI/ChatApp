@@ -12,15 +12,27 @@ using API.Common;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerUI; // For Swashbuckle
 using Scalar.AspNetCore;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+var cloudinary = new Cloudinary(new Account(
+    builder.Configuration["Cloudinary:CloudName"],
+    builder.Configuration["Cloudinary:ApiKey"],
+    builder.Configuration["Cloudinary:ApiSecret"]
+));
+
+builder.Services.AddSingleton(cloudinary);
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("RailwayPolicy", builder => 
         builder.WithOrigins(
                 "https://chatapp-production-12d3.up.railway.app",
-                "http://localhost:4200"
+                "http://localhost:4200",
+                "https://localhost:4200"
             )
             .AllowAnyMethod()
             .AllowAnyHeader()

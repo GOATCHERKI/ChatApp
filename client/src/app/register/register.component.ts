@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ApiResponse } from '../Models/api-response';
 import { Router, RouterLink } from '@angular/router';
+import { CloudinaryService } from '../services/cloudinary.service';
 
 
 @Component({
@@ -61,18 +62,30 @@ export class RegisterComponent {
     });
   }
 
-  onFileSelected(event: any) {
-    const file:File = event.target.files[0];
-    if (file){
-    this.profilePictureFile = file;
+  cloudinaryService = inject(CloudinaryService);
 
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      this.profilePicture = e.target?.result as string;
-      console.log(e.target?.result);
-    };
-    reader.readAsDataURL(file);
-    console.log(this.profilePicture);
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.profilePictureFile = file;
+  
+      // Create preview
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.profilePicture = e.target?.result as string;
+      };
+      reader.readAsDataURL(file);
+  
+      // Upload to Cloudinary
+      this.cloudinaryService.uploadImage(file).subscribe({
+        next: (response) => {
+          this.profilePicture = response.secure_url; // Save Cloudinary URL
+          console.log('Uploaded to:', response.secure_url);
+        },
+        error: (err) => console.error('Upload failed:', err)
+      });
+    }
   }
-  }
+
+  
 }
