@@ -1,4 +1,4 @@
 export const envirenmont={
-    production:true,
-    baseUrl:'https://chatapp-production-9d02.up.railway.app'
+    production:false,
+    baseUrl:'localhost:5000'
 }
