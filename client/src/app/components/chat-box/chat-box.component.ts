@@ -9,6 +9,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 
 @Component({
+  standalone: true,
   selector: 'app-chat-box',
   imports: [MatProgressSpinner, DatePipe, MatIconModule, MatMenuModule, FormsModule],
   templateUrl: './chat-box.component.html',

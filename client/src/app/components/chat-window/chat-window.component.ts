@@ -9,6 +9,7 @@ import { DatePipe } from '@angular/common';
 
 
 @Component({
+  standalone: true,
   selector: 'app-chat-window',
   imports: [TitleCasePipe, MatIconModule, FormsModule, ChatBoxComponent, DatePipe],
   templateUrl: './chat-window.component.html',

@@ -4,6 +4,7 @@ import { ChatService } from '../../services/chat.service';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-chat-right-sidebar',
   imports: [TitleCasePipe],
   templateUrl: './chat-right-sidebar.component.html',

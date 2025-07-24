@@ -11,6 +11,7 @@ import { CreateGroupDialogComponent } from '../create-group-dialog/create-group-
 import { NgIf } from '@angular/common';
 
 @Component({
+  standalone: true,
   selector: 'app-chat-sidebar',
   imports: [
     MatIconModule,

@@ -1,5 +1,5 @@
 <form #userForm="ngForm" (ngSubmit)="login()" class="md:flex justify-center px-20 bg-white gap-10">
-    <div class="h-auto w-3/5 mt-8" style="background-image: url('register.svg'); background-repeat: no-repeat; background-size: contain; background-position: bottom; background-color: white;">
+    <div class="h-auto w-3/5 mt-8" style="background-image: url('assets/icons/register.svg'); background-repeat: no-repeat; background-size: contain; background-position: bottom; background-color: white;">
     </div>
     <div class="bg-white m-10 rounded w-1/4 flex flex-col gap-3 shadow-sm dop-shadow-md">
         <div class="text-center mt-10">
@@ -25,7 +25,7 @@
                     <mat-error>Password is required</mat-error>
                 }
                 <button (click)="togglePassword($event)" type="button" matSuffix class="mat-icon-button">
-                    <img [src]="hide()?'icons8-eye-24.png':'icons8-hide-password-24.png'" class="w-6 h-6 cursor-pointer" />
+                    <img [src]="hide()?'assets/icons/icons8-eye-24.png':'assets/icons/icons8-hide-password-24.png'" class="w-6 h-6 cursor-pointer" />
                 </button>
             </mat-form-field>    
 
