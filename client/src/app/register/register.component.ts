@@ -12,6 +12,7 @@ import { CloudinaryService } from '../services/cloudinary.service';
 
 
 @Component({
+  standalone: true,
   selector: 'app-register',
   imports: [MatFormFieldModule, FormsModule, MatInputModule, MatIconModule , RouterLink],
   templateUrl: './register.component.html',

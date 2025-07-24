@@ -9,6 +9,7 @@ import { ApiResponse } from '../Models/api-response';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-login',
   imports: [ MatInputModule, MatIconModule, FormsModule, RouterModule ],
   templateUrl: './login.component.html',
