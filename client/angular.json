@@ -22,7 +22,8 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "assets/"
               }
             ],
             "styles": [
@@ -41,8 +42,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "4kb",
+                  "maximumError": "8kb"
                 }
               ],
               "outputHashing": "all",
@@ -60,20 +61,13 @@
                 "styles": {
                   "minify": true,
                   "inlineCritical": true
-                },
-                "fonts": false
+                }
               },
               "aot": true,
-              "extractLicenses": true,
-              "sourceMap": false,
-              "namedChunks": false,
-              "stylePreprocessorOptions": {
-                "includePaths": ["src/styles"]
-              }
+              "sourceMap": false
             },
             "development": {
               "optimization": false,
-              "extractLicenses": false,
               "sourceMap": true,
               "fileReplacements": [
                 {
@@ -99,15 +93,13 @@
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
         "test": {
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "public/favicon.ico"
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css"
@@ -119,6 +111,6 @@
     }
   },
   "cli": {
-    "analytics": "5e43b3e7-d274-4359-b208-2a7e4a3091f1"
+    "analytics": "55742fed-785a-4f01-97ff-f3b8e9406ae2"
   }
 }

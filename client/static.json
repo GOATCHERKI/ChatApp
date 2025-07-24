@@ -4,10 +4,5 @@
       "source": "**",
       "destination": "/index.html"
     }
-  ],
-  "headers": {
-    "/**": {
-      "Cache-Control": "no-cache, no-store, must-revalidate"
-    }
-  }
+  ]
 }

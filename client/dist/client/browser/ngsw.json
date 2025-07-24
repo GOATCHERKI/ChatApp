@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1753367427231,
+  "timestamp": 1753367990529,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -17,10 +17,8 @@
         "/chunk-KYQ2JXR3.js",
         "/chunk-LEXTEY2F.js",
         "/chunk-LWBBUW73.js",
-        "/favicon.ico",
         "/index.html",
         "/main-GNAWC2U3.js",
-        "/manifest.webmanifest",
         "/styles-MBSVIVZM.css"
       ],
       "patterns": []
@@ -32,47 +30,20 @@
       "cacheQueryOptions": {
         "ignoreVary": true
       },
-      "urls": [
-        "/chatopen.svg",
-        "/icons/icon-128x128.png",
-        "/icons/icon-144x144.png",
-        "/icons/icon-152x152.png",
-        "/icons/icon-192x192.png",
-        "/icons/icon-384x384.png",
-        "/icons/icon-512x512.png",
-        "/icons/icon-72x72.png",
-        "/icons/icon-96x96.png",
-        "/icons8-eye-24.png",
-        "/icons8-hide-password-24.png",
-        "/register.svg"
-      ],
+      "urls": [],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/chatopen.svg": "0d0abfab5d7cb3c8b53a4c05a806083f849fa3ac",
     "/chunk-5GM2P44B.js": "478c76848cbbf5cf196604ec94f3da98faa2e99b",
     "/chunk-A6YLLC7P.js": "8ae68932e9c5a7da90fbce8482fb6bd655a45d3d",
     "/chunk-HBBK3LIZ.js": "241a476610bfc41a3c4a0e4e74369acb2c55bad1",
     "/chunk-KYQ2JXR3.js": "97602268b12a63ece7d63d17bf7e1bb4fa3fa38b",
     "/chunk-LEXTEY2F.js": "9a21bfadb0c1bfcd3f49cc0a794da5e587a59ab0",
     "/chunk-LWBBUW73.js": "6da6e9ce9d2f62053bc8557f82abb3793fd2bafe",
-    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
-    "/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
-    "/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
-    "/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
-    "/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
-    "/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
-    "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
-    "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
-    "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/icons8-eye-24.png": "e1272ef71b02b97597b668ea80a2d0eb64095810",
-    "/icons8-hide-password-24.png": "139d387d9536879fa39decde966fda754b588d2e",
-    "/index.html": "c6f8272ebc93c5b81fc96d7c35816ae68e7d555b",
+    "/index.html": "9efbfe64e76e45db6698abcbfb1054eb9c408c88",
     "/main-GNAWC2U3.js": "5c43f79cbf95828d60107ee3d2f6dadae6718e6d",
-    "/manifest.webmanifest": "631fc6bfeaf989f774f8218cd35de191280f24ea",
-    "/register.svg": "32fe5e8e024bb29afa520ba2c4cffb9dbe72924c",
     "/styles-MBSVIVZM.css": "9b16e9038b0626d57c0f1916a78fe768c70473ff"
   },
   "navigationUrls": [
