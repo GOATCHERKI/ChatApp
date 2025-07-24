@@ -74,12 +74,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "client:build:production",
-              "proxyConfig": "proxy.conf.json"
+              "buildTarget": "client:build:production"
             },
             "development": {
-              "buildTarget": "client:build:development",
-              "proxyConfig": "proxy.conf.json"
+              "buildTarget": "client:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,8 +86,10 @@
           "builder": "@angular/build:karma",
           "options": {
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "public"
+            "assets": [{
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
               "src/styles.css"
