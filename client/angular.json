@@ -56,13 +56,7 @@
               "serviceWorker": "ngsw-config.json",
               "baseHref": "/",
               "deployUrl": "/",
-              "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": true,
-                  "inlineCritical": true
-                }
-              },
+              "optimization": true,
               "aot": true,
               "sourceMap": false
             },
