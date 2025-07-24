@@ -1,8 +1,13 @@
 {
   "rewrites": [
     {
-      "source": "/(login|chat|register|.*)",
+      "source": "**",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "headers": {
+    "/**": {
+      "Cache-Control": "no-cache, no-store, must-revalidate"
+    }
+  }
 }
