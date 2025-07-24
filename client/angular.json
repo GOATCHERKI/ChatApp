@@ -22,8 +22,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "src/assets",
-                "output": "assets/"
+                "input": "public"
               }
             ],
             "styles": [
@@ -92,8 +91,7 @@
           "options": {
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "public"
             ],
             "styles": [
               "src/styles.css"
