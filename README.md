@@ -1,8 +1,6 @@
 CHATAPP
 Connect, Communicate, Conquer Seamlessly Everywhere
 
-https://img.shields.io/badge/last%2520commit-July-blue
-https://img.shields.io/badge/C%2523-49.4%2525-green
 
 Built with the tools and technologies:
 
