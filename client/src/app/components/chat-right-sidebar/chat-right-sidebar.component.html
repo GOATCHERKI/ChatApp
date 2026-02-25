@@ -1,0 +1,28 @@
+@if(group()) {
+  <div class="p-4">
+    <div class="font-bold text-lg mb-2">Group Members</div>
+    <div class="flex flex-col gap-2">
+      @for (member of group().Members; track member.id) {
+        <div class="flex items-center gap-2">
+          <img [src]="member.profilePictureUrl || member.profilePic || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'" class="h-8 w-8 rounded-full" />
+          <span class="font-medium">{{ member.userName || member.fullName || member.id.slice(0, 6) }}</span>
+        </div>
+      }
+    </div>
+  </div>
+} @else if(chatService.currentOpenedChat())
+{
+    <div class="p-3">
+    <div class="flex flex-col text-center items-center mt-3">
+        <img class="w-44 h-44 mb-4 rounded-full object-cover" [src]="chatService.currentOpenedChat()?.profilePictureUrl || 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"  alt="Profile Picture">
+        <div>
+            <p class="ml-3">
+                <span class="font-semibold text-lg">{{ chatService.currentOpenedChat()?.fullName | titlecase }}</span>
+            </p>
+            <p class="text-sm text-gray-500">
+                {{ chatService.currentOpenedChat()?.userName }}
+            </p> 
+        </div>
+    </div>
+</div>
+}

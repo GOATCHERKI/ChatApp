@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@cloudinary/angular": "^1.0.0-beta.14",
+    "@cloudinary/url-gen": "^1.21.0"
+  }
+}

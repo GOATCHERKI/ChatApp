@@ -1,0 +1,68 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Angular build
+dist/
+.angular/
+coverage/
+
+# Editor & system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Environment & secrets
+*.env
+*.env.*
+client/src/environments/*.ts
+API/src/environments/*.ts
+secrets.json
+*.secrets.json
+*.secret.json
+*.local.json
+*.local.settings.json
+
+# Cache
+.eslintcache
+.cache
+
+# Certificates & keys
+*.pfx
+*.pem
+*.key
+*.cer
+*.crt
+*.p12
+
+# .NET build & IDE
+[Bb]in/
+[Oo]bj/
+.vs/
+*.suo
+*.user
+*.rsuser
+*.sln.docstates
+TestResult*/
+
+# API sensitive & artifacts
+API/appsettings.json
+API/appsettings.Production.json
+API/appsettings.Staging.json
+API/appsettings.*.local.json
+API/Properties/PublishProfiles/*.pubxml
+API/Properties/PublishProfiles/*.pubxml.user
+API/wwwroot/uploads/
+API/*.db
+API/node_modules/
+
+# Docker
+.dockerignore
+**/.env.docker*
+
+
+
+appsettings.Development.json
